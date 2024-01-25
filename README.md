@@ -2,7 +2,7 @@
 ![cal](https://github.com/lyh990517/compose-calendar/assets/45873564/d5ea635c-87db-40d7-96c0-cce64a11f2f3)
 
 ## Overview
-Compose Calendar is a sample calendar component built using Jetpack Compose for Android. It provides a customizable calendar view with various features. I encourage you to star this repository if you find it useful!
+Compose Calendar is a sample calendar component built using Jetpack Compose for Android. It provides a customizable calendar view with various features. I encourage you to ⭐star⭐ this repository if you find it useful!
 
 ## How to Use
 To use Compose Calendar in your Android app, follow these steps:
