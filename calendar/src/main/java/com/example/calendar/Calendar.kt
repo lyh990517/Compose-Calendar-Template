@@ -118,7 +118,7 @@ private fun CalendarContent(
         DefaultRoundedButton(
             modifier = Modifier,
             cornerRadius = 32.dp,
-            buttonText = "선택",
+            buttonText = "Select",
             buttonColor = Color(0xFF212A3A)
         ) {
             if (viewModel.selectedIndex.value == Triple(-1, -1, -1)) {
