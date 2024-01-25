@@ -1,0 +1,32 @@
+# Compose Calendar
+![cal](https://github.com/lyh990517/compose-calendar/assets/45873564/d5ea635c-87db-40d7-96c0-cce64a11f2f3)
+
+## Overview
+Compose Calendar is a sample calendar component built using Jetpack Compose for Android. It provides a customizable calendar view with various features. I encourage you to star this repository if you find it useful!
+
+## How to Use
+To use Compose Calendar in your Android app, follow these steps:
+
+1. Add Compose Calendar as a dependency in your project.
+2. Include the `Calendar` composable in your layout.
+3. Customize the calendar appearance and behavior as needed.
+4. Handle the `onSelect` callback to respond to date selection events.
+
+## Customization
+You can customize Compose Calendar in various ways, such as changing the colors, specifying the number of months to display, and adjusting the layout. Refer to the documentation and source code for more details on customization options.
+
+## Usage Examples
+Here's an example of how to use Compose Calendar in your Android app:
+
+```kotlin
+Calendar(modifier = Modifier.padding(15.dp)) { selectedDate ->
+    // Handle selected date here
+    Toast.makeText(this, "$selectedDate", Toast.LENGTH_SHORT).show()
+}
+```
+
+
+## Contact
+If you have any questions, suggestions, or issues, feel free to reach out to us. You can find our contact information on our GitHub repository.
+
+We appreciate your support and contributions to Compose Calendar!
