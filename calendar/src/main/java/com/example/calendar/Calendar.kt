@@ -29,6 +29,7 @@ import com.example.calendar.ui_component.CalendarControlView
 import com.example.calendar.ui_component.DefaultRoundedButton
 import com.example.calendar.ui_component.Month
 import com.example.calendar.ui_component.VerticalSpacer
+import com.example.calendar.util.CalendarUtil
 import com.example.calendar.values.notSelected
 import com.example.calendar.viewmodel.CalendarViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -82,6 +83,9 @@ private fun CalendarContent(
 ) {
     val calendarPages = remember { (uiState.value as CalendarState.Success).calendarPage }
     val pagerState = rememberPagerState { pageCount }
+    LaunchedEffect(Unit){
+        pagerState.animateScrollToPage(CalendarUtil.currentMonth - 1)
+    }
     Column(
         modifier
             .background(Color.White)
