@@ -1,8 +1,11 @@
 package com.example.calendar.util
 
 import android.os.Build
+import androidx.annotation.RequiresApi
 import com.example.calendar.model.Date
 import com.example.calendar.model.CalendarPage
+import java.text.SimpleDateFormat
+import java.time.LocalDate
 import java.time.YearMonth
 import java.time.format.TextStyle
 import java.time.temporal.TemporalAdjusters
@@ -15,6 +18,8 @@ object CalendarUtil {
 
     val currentYear = calendar.get(Calendar.YEAR)
     val currentMonth = calendar.get(Calendar.MONTH) + 1
+    val currentDay = calendar.get(Calendar.DAY_OF_MONTH)
+    val currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)
 
     fun makeCalenderPage(pageCount: Int) = List(pageCount) { pageIndex ->
         val totalMonth = currentMonth + pageIndex
@@ -93,6 +98,58 @@ object CalendarUtil {
         }
 
         return daysList
+    }
+
+    fun makeYear(year: Int): List<Date> {
+        val dates = mutableListOf<Date>()
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            for (month in 1..12) {
+                val monthStart = LocalDate.of(currentYear, month, 1)
+                val monthEnd = monthStart.withDayOfMonth(monthStart.lengthOfMonth())
+
+                var currentDate = monthStart
+                while (currentDate.isBefore(monthEnd) || currentDate.isEqual(monthEnd)) {
+                    dates.add(
+                        Date(
+                            year = currentDate.year,
+                            month = currentDate.monthValue,
+                            day = currentDate.dayOfMonth,
+                            dayOfWeek = currentDate.dayOfWeek.getDisplayName(
+                                TextStyle.FULL,
+                                Locale.getDefault()
+                            )
+                        )
+                    )
+                    currentDate = currentDate.plusDays(1)
+                }
+            }
+        } else {
+            for (month in 1..12) {
+                val calendar = Calendar.getInstance()
+                calendar.set(year, month - 1, 1)
+
+                val monthEnd = calendar.getActualMaximum(Calendar.DAY_OF_MONTH)
+
+                for (day in 1..monthEnd) {
+                    calendar.set(Calendar.DAY_OF_MONTH, day)
+
+                    val sdf = SimpleDateFormat("EEEE", Locale.getDefault())
+                    val dayOfWeek = sdf.format(calendar.time)
+
+                    dates.add(
+                        Date(
+                            year = calendar.get(Calendar.YEAR),
+                            month = calendar.get(Calendar.MONTH) + 1,
+                            day = calendar.get(Calendar.DAY_OF_MONTH),
+                            dayOfWeek = dayOfWeek
+                        )
+                    )
+                }
+            }
+        }
+
+        return dates
     }
 
 }
