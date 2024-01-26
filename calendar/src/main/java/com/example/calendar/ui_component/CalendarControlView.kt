@@ -11,6 +11,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -23,17 +24,21 @@ fun CalendarControlView(
     isControllable: Boolean = false
 ) {
     Row(modifier) {
-        Text(text = "$year . $month")
+        Text(modifier = Modifier.testTag("date"), text = "$year . $month")
         HorizontalSpacer(value = 10)
-        if(isControllable){
+        if (isControllable) {
             Icon(
-                modifier = Modifier.clickable { onPrev() },
+                modifier = Modifier
+                    .testTag("prev")
+                    .clickable { onPrev() },
                 imageVector = Icons.Default.KeyboardArrowLeft,
                 contentDescription = "key"
             )
             HorizontalSpacer(value = 10)
             Icon(
-                modifier = Modifier.clickable { onNext() },
+                modifier = Modifier
+                    .testTag("next")
+                    .clickable { onNext() },
                 imageVector = Icons.Default.KeyboardArrowRight,
                 contentDescription = "key"
             )
