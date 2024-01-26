@@ -6,6 +6,47 @@
 ## Overview
 Compose Calendar is a sample calendar component built using Jetpack Compose for Android. It provides a customizable calendar view with various features. I encourage you to ⭐star⭐ this repository if you find it useful!
 
+## Quick Start
+[![](https://jitpack.io/v/lyh990517/Compose-Calendar-Template.svg)](https://jitpack.io/#lyh990517/Compose-Calendar-Template)
+<br>
+First, add the JitPack repository to your build script. 
+
+If you're using **Groovy DSL**, 
+
+```gradle
+//settings.gradle
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+            mavenCentral()
+            maven { url 'https://jitpack.io' }
+        }
+}
+//app.gradle
+dependencies {
+    implementation 'com.github.lyh990517:Compose-Calendar-Template:latest-release'
+}
+```
+
+<br>
+
+If you're using **Kotlin DSL**
+```kotlin
+//settings.gradle.kts
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+            google()
+            mavenCentral()
+            maven(url = "https://jitpack.io")
+        }
+}
+//app.gradle.kts
+dependencies {
+    implementation ("com.github.lyh990517:Compose-Calendar-Template:latest-release")
+}
+```
+
 ## How to Use
 To use Compose Calendar in your Android app, follow these steps:
 
