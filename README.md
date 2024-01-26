@@ -9,7 +9,6 @@ Compose Calendar is a sample calendar component built using Jetpack Compose for 
 ## Quick Start
 [![](https://jitpack.io/v/lyh990517/Compose-Calendar-Template.svg)](https://jitpack.io/#lyh990517/Compose-Calendar-Template)
 <br>
-First, add the JitPack repository to your build script. 
 
 If you're using **Groovy DSL**, 
 
