@@ -13,29 +13,31 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun CalendarControlView(
     modifier: Modifier = Modifier,
     year: Int,
     month: Int,
-    onPrev: () -> Unit,
-    onNext: () -> Unit
+    onPrev: () -> Unit = {},
+    onNext: () -> Unit = {},
+    isControllable: Boolean = false
 ) {
     Row(modifier) {
         Text(text = "$year . $month")
         HorizontalSpacer(value = 10)
-        Icon(
-            modifier = Modifier.clickable { onPrev() },
-            imageVector = Icons.Default.KeyboardArrowLeft,
-            contentDescription = "key"
-        )
-        HorizontalSpacer(value = 10)
-        Icon(
-            modifier = Modifier.clickable { onNext() },
-            imageVector = Icons.Default.KeyboardArrowRight,
-            contentDescription = "key"
-        )
+        if(isControllable){
+            Icon(
+                modifier = Modifier.clickable { onPrev() },
+                imageVector = Icons.Default.KeyboardArrowLeft,
+                contentDescription = "key"
+            )
+            HorizontalSpacer(value = 10)
+            Icon(
+                modifier = Modifier.clickable { onNext() },
+                imageVector = Icons.Default.KeyboardArrowRight,
+                contentDescription = "key"
+            )
+        }
     }
 }
 

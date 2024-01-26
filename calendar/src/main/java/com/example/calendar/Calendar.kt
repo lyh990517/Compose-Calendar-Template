@@ -29,6 +29,7 @@ import com.example.calendar.ui_component.CalendarControlView
 import com.example.calendar.ui_component.DefaultRoundedButton
 import com.example.calendar.ui_component.Month
 import com.example.calendar.ui_component.VerticalSpacer
+import com.example.calendar.values.notSelected
 import com.example.calendar.viewmodel.CalendarViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -124,7 +125,7 @@ private fun CalendarContent(
             buttonText = "Select",
             buttonColor = Color(0xFF212A3A)
         ) {
-            if (viewModel.selectedIndex.value == Triple(-1, -1, -1)) {
+            if (viewModel.selectedIndex.value == notSelected) {
                 Toast.makeText(context, "Select Date First!!", Toast.LENGTH_SHORT).show()
             } else {
                 val (month, week, day) = viewModel.selectedIndex.value

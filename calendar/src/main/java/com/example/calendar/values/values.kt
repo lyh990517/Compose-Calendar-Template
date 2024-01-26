@@ -22,3 +22,5 @@ val dayOfWeekToCalendarDay = mapOf(
 val dayOfWeekList = listOf("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
 
 val calendarDateSize = 32.dp
+
+val notSelected = Triple(-1, -1, -1)

@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.example.calendar.model.Date
 import com.example.calendar.values.calendarDateSize
 import com.example.calendar.values.dayOfWeekToCalendarDay
+import com.example.calendar.values.notSelected
 import java.util.Calendar
 
 @Composable
@@ -37,7 +38,7 @@ fun Day(
                 selected = selectedIndex.value == Triple(monthIndex, weekIndex, dayIndex),
                 onClick = {
                     if (selectedIndex.value == Triple(monthIndex, weekIndex, dayIndex))
-                        selectedIndex.value = Triple(-1, -1, -1)
+                        selectedIndex.value = notSelected
                     else {
                         selectedIndex.value = Triple(monthIndex, weekIndex, dayIndex)
                     }
