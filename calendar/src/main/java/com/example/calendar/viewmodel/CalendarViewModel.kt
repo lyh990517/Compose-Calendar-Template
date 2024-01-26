@@ -3,7 +3,7 @@ package com.example.calendar.viewmodel
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.calendar.CalendarState
+import com.example.calendar.state.CalendarState
 import com.example.calendar.util.CalendarUtil
 import com.example.calendar.util.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

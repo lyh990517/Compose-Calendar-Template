@@ -1,4 +1,4 @@
-package com.example.calendar
+package com.example.calendar.ui_component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

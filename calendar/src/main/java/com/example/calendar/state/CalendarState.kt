@@ -1,4 +1,4 @@
-package com.example.calendar
+package com.example.calendar.state
 
 import com.example.calendar.model.CalendarPage
 
