@@ -7,7 +7,9 @@ plugins {
 android {
     namespace = "com.example.calendar"
     compileSdk = 34
-
+    publishing {
+        singleVariant("release")
+    }
     defaultConfig {
         minSdk = 24
         targetSdk = 34
@@ -68,19 +70,19 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
 
-val group = "com.github.lyh990517"
-val libVersion = "1.1.5"
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.lyh990517"
+                artifactId = "Compose-Calendar-Template"
+                version = "1.1.6"
 
-publishing {
-    publications {
-        create<MavenPublication>("release") {
-            groupId = group
-            artifactId = "Compose-Calendar-Template"
-            version = libVersion
-
-            pom {
-                name.set("compose_calendar")
-                description.set("This Jetpack Compose Calendar sample is very simple to use and can be easily customized.")
+                pom {
+                    name.set("compose_calendar")
+                    description.set("This Jetpack Compose Calendar sample is very simple to use and can be easily customized.")
+                }
             }
         }
     }
