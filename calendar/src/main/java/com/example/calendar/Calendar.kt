@@ -85,7 +85,7 @@ private fun CalendarContent(
 ) {
     val calendarPages = remember { (uiState.value as CalendarState.Success).calendarPage }
     val pagerState = rememberPagerState { pageCount }
-    LaunchedEffect(Unit){
+    LaunchedEffect(Unit) {
         pagerState.animateScrollToPage(CalendarUtil.currentMonth - 1)
     }
     Column(
@@ -118,7 +118,9 @@ private fun CalendarContent(
         )
         VerticalSpacer(value = 10)
         HorizontalPager(
-            modifier = modifier.weight(1f), state = pagerState
+            modifier = modifier
+                .weight(1f)
+                .testTag("pager"), state = pagerState
         ) { monthIndex ->
             Month(
                 calendarPages[monthIndex].calendar,
@@ -127,7 +129,7 @@ private fun CalendarContent(
             )
         }
         DefaultRoundedButton(
-            modifier = Modifier,
+            modifier = Modifier.testTag("select"),
             cornerRadius = 32.dp,
             buttonText = "Select",
             buttonColor = Color(0xFF212A3A)
