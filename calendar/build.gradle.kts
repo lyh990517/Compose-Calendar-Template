@@ -28,8 +28,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -68,14 +68,14 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
 
-val group = "com.yunho"
-val libVersion = "1.0.0"
+val group = "com.github.lyh990517"
+val libVersion = "1.1.4"
 
 publishing {
     publications {
         create<MavenPublication>("release") {
             groupId = group
-            artifactId = "compose_calendar"
+            artifactId = "Compose-Calendar-Template"
             version = libVersion
 
             pom {
