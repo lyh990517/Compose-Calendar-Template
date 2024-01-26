@@ -1,6 +1,8 @@
 # Compose Calendar
-![cal](https://github.com/lyh990517/compose-calendar/assets/45873564/d5ea635c-87db-40d7-96c0-cce64a11f2f3)
-![KakaoTalk_Photo_2024-01-26-14-35-29](https://github.com/lyh990517/Compose-Calendar-Template/assets/45873564/6cdfaeeb-b016-41b5-aa81-97fe46bc6272)
+<img src="https://github.com/lyh990517/compose-calendar/assets/45873564/d5ea635c-87db-40d7-96c0-cce64a11f2f3" width="300">
+
+<img src="https://github.com/lyh990517/Compose-Calendar-Template/assets/45873564/6cdfaeeb-b016-41b5-aa81-97fe46bc6272" width="300">
+
 
 
 ## Overview
