@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    `maven-publish`
 }
 
 android {
@@ -65,4 +66,22 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+}
+
+val group = "com.yunho"
+val libVersion = "1.0.0"
+
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = group
+            artifactId = "compose_calendar"
+            version = libVersion
+
+            pom {
+                name.set("compose_calendar")
+                description.set("This Jetpack Compose Calendar sample is very simple to use and can be easily customized.")
+            }
+        }
+    }
 }
