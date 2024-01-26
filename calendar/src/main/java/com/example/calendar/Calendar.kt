@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
@@ -21,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.calendar.model.Date
@@ -52,7 +54,7 @@ fun Calendar(
     when (uiState.value) {
         CalendarState.Loading -> {
             Box(modifier.fillMaxSize()) {
-                CircularProgressIndicator(Modifier.align(Alignment.Center))
+                Text(text = "Loading")
             }
         }
 
@@ -91,7 +93,7 @@ private fun CalendarContent(
             .background(Color.White)
     ) {
         CalendarControlView(
-            Modifier,
+            Modifier.testTag("Calendar"),
             calendarPages[pagerState.currentPage].year,
             calendarPages[pagerState.currentPage].month,
             onPrev = {

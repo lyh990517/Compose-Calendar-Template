@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.calendar.model.Date
@@ -33,6 +34,7 @@ fun Day(
 ) {
     Box(
         modifier = Modifier
+            .testTag("$date")
             .clip(CircleShape)
             .selectable(
                 selected = selectedIndex.value == Triple(monthIndex, weekIndex, dayIndex),
