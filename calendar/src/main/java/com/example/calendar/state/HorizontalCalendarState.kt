@@ -1,6 +1,5 @@
 package com.example.calendar.state
 
-import com.example.calendar.model.CalendarPage
 import com.example.calendar.model.Date
 
 sealed class HorizontalCalendarState {
