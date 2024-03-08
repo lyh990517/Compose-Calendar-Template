@@ -77,7 +77,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.lyh990517"
                 artifactId = "Compose-Calendar-Template"
-                version = "1.1.6"
+                version = "1.1.7"
 
                 pom {
                     name.set("compose_calendar")
